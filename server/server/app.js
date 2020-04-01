@@ -8,19 +8,19 @@ const app = express();
 const PORT = 3005;
 
 mongoose.connect(
-  "mongodb+srv://YaroslavAnt:19860401@cluster0-1dbqr.mongodb.net/graphQL?retryWrites=true&w=majority",
+  "mongodb+srv://YaroslavAnt:19860401@cluster0-1dbqr.mongodb.net/sample_airbnb?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
-app.use(cors());
+// app.use(cors());
 
-app.use(
-  "/graphql",
-  graphqlHTTP({
-    schema,
-    graphiql: true
-  })
-);
+// app.use(
+//   "/graphql",
+//   graphqlHTTP({
+//     schema,
+//     graphiql: true
+//   })
+// );
 
 const dbConnection = mongoose.connection;
 dbConnection.on("error", err => console.log("Error", err));
